@@ -5,6 +5,5 @@ myReverse :: String -> String
 myReverse list = foldl f [] list
 
 isPalindrome :: String -> Bool
-isPalindrome string = if myReverse string == string
-                      then True
-                      else False
+isPalindrome string = myReverse string == string
+                     
