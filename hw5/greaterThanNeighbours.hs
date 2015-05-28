@@ -14,7 +14,7 @@ wasPrinted (St a b c) = c
 greaterThanNeighbours = foldM (\curState next -> (helper curState next) 
 	>> return (St (second curState) next 
 		(wasPrinted curState || first curState < second curState && second curState > next))) 
-		(St 0 0 False) 
+		(St (maxBound :: Int) (maxBound :: Int) False) 
 	where
 		helper curState third =
 			if (not (wasPrinted curState) && first curState < second curState && second curState > third)
